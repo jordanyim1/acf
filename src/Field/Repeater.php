@@ -99,7 +99,7 @@ class Repeater extends BasicField implements FieldInterface
             $name = $this->retrieveFieldName($meta->meta_key, $fieldName, $id);
             
             $post = $this->post->ID != $meta->post_id ? $this->post->find($meta->post_id) : $this->post;
-            $field = FieldFactory::make($meta->meta_key, $post);
+            $field = FieldFactory::make($meta->meta_key, $post, 'text');
 
             $fields[$id][$name] = $field->get();
         }
